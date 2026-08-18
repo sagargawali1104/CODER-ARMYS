@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coder Army</title>
+
+    <link rel="stylesheet" href="day7.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            ⚔️ CODER ARMY
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#today">Today's Problems</a>
+            <a href="#previous">Previous</a>
+            <a href="#members">Members</a>
+            <a href="#rules">Rules</a>
+        </nav>
+
+        <button id="themeBtn">
+            🌙
+        </button>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                ⚔️ COLLEGE CODING COMMUNITY
+            </p>
+
+            <h1>
+                CODE.
+                <span>LEARN.</span>
+                CONQUER.
+            </h1>
+
+            <p class="hero-text">
+                A student coding community focused on
+                DSA, problem solving, Java, Web Development
+                and placement preparation.
+            </p>
+
+            <a href="#today" class="main-btn">
+                Start Today's Challenge →
+            </a>
+
+        </div>
+
+
+        <div class="army-card">
+
+            <div class="crown">
+                ♛
+            </div>
+
+            <div class="code-icon">
+                &lt;/&gt;
+            </div>
+
+            <h2>
+                CODER<br>
+                ARMY
+            </h2>
+
+            <p>
+                Code. Learn. Conquer.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+        <div class="stat-box">
+
+            <h2 id="solvedCount">
+                0
+            </h2>
+
+            <p>
+                Problems Solved
+            </p>
+
+        </div>
+
+
+        <div class="stat-box">
+
+            <h2>
+                2
+            </h2>
+
+            <p>
+                Problems / Day
+            </p>
+
+        </div>
+
+
+        <div class="stat-box">
+
+            <h2 id="memberCount">
+                0
+            </h2>
+
+            <p>
+                Members
+            </p>
+
+        </div>
+
+
+        <div class="stat-box">
+
+            <h2>
+                🔥
+            </h2>
+
+            <p>
+                Stay Consistent
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- TODAY'S PROBLEMS -->
+
+    <section id="today" class="section">
+
+        <div class="section-heading">
+
+            <p class="small-title">
+                DAILY CHALLENGE
+            </p>
+
+            <h2>
+                Today's <span>Problems</span>
+            </h2>
+
+            <p>
+                Solve both problems before checking
+                other solutions.
+            </p>
+
+        </div>
+
+
+        <div id="todayProblems" class="problem-grid">
+
+            <!-- JavaScript will add problems -->
+
+        </div>
+
+    </section>
+
+
+    <!-- PREVIOUS PROBLEMS -->
+
+    <section id="previous" class="section dark-section">
+
+        <div class="section-heading">
+
+            <p class="small-title">
+                PRACTICE HISTORY
+            </p>
+
+            <h2>
+                Previous <span>Problems</span>
+            </h2>
+
+            <p>
+                Practice questions from previous days.
+            </p>
+
+        </div>
+
+
+        <div id="previousProblems" class="previous-list">
+
+            <!-- JavaScript will add previous problems -->
+
+        </div>
+
+    </section>
+
+
+    <!-- MEMBERS -->
+
+    <section id="members" class="section">
+
+        <div class="section-heading">
+
+            <p class="small-title">
+                OUR TEAM
+            </p>
+
+            <h2>
+                Coder Army <span>Members</span>
+            </h2>
+
+        </div>
+
+
+        <form id="memberForm" class="member-form">
+
+            <input
+                type="text"
+                id="memberName"
+                placeholder="Enter member name"
+                required
+            >
+
+            <button
+                type="submit"
+                class="main-btn"
+            >
+                + Add Member
+            </button>
+
+        </form>
+
+
+        <div id="memberList" class="member-list">
+
+        </div>
+
+    </section>
+
+
+    <!-- RULES -->
+
+    <section id="rules" class="section dark-section">
+
+        <div class="section-heading">
+
+            <p class="small-title">
+                GROUP CULTURE
+            </p>
+
+            <h2>
+                Army <span>Rules</span>
+            </h2>
+
+        </div>
+
+
+        <div class="rules-grid">
+
+
+            <div class="rule-card">
+
+                <div class="rule-number">
+                    01
+                </div>
+
+                <h3>
+                    Try First
+                </h3>
+
+                <p>
+                    Try the problem yourself for
+                    at least 20–30 minutes.
+                </p>
+
+            </div>
+
+
+            <div class="rule-card">
+
+                <div class="rule-number">
+                    02
+                </div>
+
+                <h3>
+                    No Copying
+                </h3>
+
+                <p>
+                    Understand the logic before
+                    looking at a solution.
+                </p>
+
+            </div>
+
+
+            <div class="rule-card">
+
+                <div class="rule-number">
+                    03
+                </div>
+
+                <h3>
+                    Share
+                </h3>
+
+                <p>
+                    Share your approach and discuss
+                    different solutions.
+                </p>
+
+            </div>
+
+
+            <div class="rule-card">
+
+                <div class="rule-number">
+                    04
+                </div>
+
+                <h3>
+                    Consistency
+                </h3>
+
+                <p>
+                    Solve two problems every day.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div>
+            ⚔️ <strong>CODER ARMY</strong>
+        </div>
+
+        <p>
+            Code. Learn. Conquer.
+        </p>
+
+    </footer>
+
+
+    <script src="day7.js"></script>
+
+</body>
+
+</html>
