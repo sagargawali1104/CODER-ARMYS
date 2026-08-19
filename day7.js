@@ -4,38 +4,36 @@
 ========================================= */
 
 
-/*
-    CHANGE ONLY THIS SECTION
-    WHEN YOU WANT NEW DAILY QUESTIONS.
-*/
-
+/* =========================================
+   DAY 2 QUESTIONS
+========================================= */
 
 const dailyProblems = [
 
     {
         id: 3,
         date: "Day 2",
-        title: "Find Smallest Element",
+        title: "Find Maximum Element",
         topic: "Array Basics",
         difficulty: "Basic",
         platform: "GeeksforGeeks",
         description:
-            "Find the smallest element in the given array.",
+            "Find the maximum element in the given array.",
         link:
-            "https://www.geeksforgeeks.org/problems/find-the-smallest-and-second-smallest-element-in-an-array3226/1"
+            "https://www.geeksforgeeks.org/problems/largest-element-in-array4009/1"
     },
 
     {
         id: 4,
         date: "Day 2",
-        title: "Find Largest Element",
+        title: "Find Minimum Element",
         topic: "Array Basics",
         difficulty: "Basic",
         platform: "GeeksforGeeks",
         description:
-            "Find the largest element present in the given array.",
+            "Find the minimum element in the given array.",
         link:
-            "https://www.geeksforgeeks.org/problems/largest-element-in-array4009/1"
+            "https://www.geeksforgeeks.org/problems/min-element-in-array/1"
     }
 
 ];
@@ -45,11 +43,10 @@ const dailyProblems = [
    PREVIOUS QUESTIONS
 ========================================= */
 
-
 const previousProblems = [
 
     {
-        id: 101,
+        id: 1,
         date: "Day 1",
         title: "Print Elements of Array",
         topic: "Array Basics",
@@ -60,7 +57,7 @@ const previousProblems = [
     },
 
     {
-        id: 102,
+        id: 2,
         date: "Day 1",
         title: "Sum of Array",
         topic: "Array Basics",
@@ -77,22 +74,9 @@ const previousProblems = [
    LOCAL STORAGE
 ========================================= */
 
-
-/*
-   IMPORTANT:
-   This saves solved problems after refresh.
-*/
-
-
 let solvedProblems =
     JSON.parse(
         localStorage.getItem("solvedProblems")
-    ) || [];
-
-
-let members =
-    JSON.parse(
-        localStorage.getItem("coderArmyMembers")
     ) || [];
 
 
@@ -100,49 +84,34 @@ let members =
    HTML ELEMENTS
 ========================================= */
 
-
 const todayContainer =
-    document.getElementById(
-        "todayProblems"
-    );
-
+    document.getElementById("todayProblems");
 
 const previousContainer =
-    document.getElementById(
-        "previousProblems"
-    );
-
-
-/*
-   Your HTML uses:
-   <b id="solved">0</b>
-*/
-
+    document.getElementById("previousProblems");
 
 const solvedCount =
-    document.getElementById(
-        "solved"
-    );
-
+    document.getElementById("solvedCount");
 
 const memberCount =
-    document.getElementById(
-        "memberCount"
-    );
-
+    document.getElementById("memberCount");
 
 const memberList =
-    document.getElementById(
-        "memberList"
-    );
+    document.getElementById("memberList");
+
+const themeBtn =
+    document.getElementById("themeBtn");
 
 
 /* =========================================
    DISPLAY TODAY'S PROBLEMS
 ========================================= */
 
-
 function displayTodayProblems() {
+
+    if (!todayContainer) {
+        return;
+    }
 
     todayContainer.innerHTML = "";
 
@@ -150,9 +119,7 @@ function displayTodayProblems() {
     dailyProblems.forEach(problem => {
 
         const card =
-            document.createElement(
-                "article"
-            );
+            document.createElement("article");
 
 
         card.className =
@@ -164,9 +131,7 @@ function displayTodayProblems() {
 
 
         const isSolved =
-            solvedProblems.includes(
-                problem.id
-            );
+            solvedProblems.includes(problem.id);
 
 
         card.innerHTML = `
@@ -195,10 +160,7 @@ function displayTodayProblems() {
 
 
             <p>
-                <strong>
-                    Platform:
-                </strong>
-
+                <strong>Platform:</strong>
                 ${problem.platform}
             </p>
 
@@ -216,17 +178,10 @@ function displayTodayProblems() {
 
 
                 <button
-                    class="problem-btn
-                    ${isSolved ? "solved" : ""}"
+                    class="problem-btn ${isSolved ? "solved" : ""}"
                     onclick="markSolved(${problem.id})"
                 >
-
-                    ${
-                        isSolved
-                        ? "✓ Solved"
-                        : "Mark Solved"
-                    }
-
+                    ${isSolved ? "✓ Solved" : "Mark Solved"}
                 </button>
 
             </div>
@@ -238,9 +193,6 @@ function displayTodayProblems() {
 
     });
 
-
-    updateSolvedCount();
-
 }
 
 
@@ -248,43 +200,19 @@ function displayTodayProblems() {
    MARK AS SOLVED
 ========================================= */
 
-
 function markSolved(id) {
 
-    /*
-       Don't count the same problem twice.
-    */
-
-
-    if (
-        !solvedProblems.includes(id)
-    ) {
+    if (!solvedProblems.includes(id)) {
 
         solvedProblems.push(id);
 
 
-        /*
-           Save solved problems
-           in browser.
-        */
-
-
         localStorage.setItem(
             "solvedProblems",
-            JSON.stringify(
-                solvedProblems
-            )
+            JSON.stringify(solvedProblems)
         );
 
     }
-
-
-    /*
-       Update website immediately.
-    */
-
-
-    updateSolvedCount();
 
 
     displayTodayProblems();
@@ -296,109 +224,111 @@ function markSolved(id) {
    DISPLAY PREVIOUS PROBLEMS
 ========================================= */
 
-
 function displayPreviousProblems() {
+
+    if (!previousContainer) {
+        return;
+    }
 
     previousContainer.innerHTML = "";
 
 
-    previousProblems.forEach(
-        problem => {
+    previousProblems.forEach(problem => {
 
-            const card =
-                document.createElement(
-                    "div"
-                );
+        const card =
+            document.createElement("div");
 
 
-            card.className =
-                "previous-card";
+        card.className =
+            "previous-card";
 
 
-            card.innerHTML = `
+        card.innerHTML = `
 
-                <div>
+            <div>
 
-                    <h3>
-                        ${problem.title}
-                    </h3>
+                <h3>
+                    ${problem.title}
+                </h3>
 
+                <p>
+                    ${problem.date}
+                    ·
+                    ${problem.topic}
+                    ·
+                    ${problem.difficulty}
+                    ·
+                    ${problem.platform}
+                </p>
 
-                    <p>
-
-                        ${problem.date}
-
-                        ·
-
-                        ${problem.topic}
-
-                        ·
-
-                        ${problem.difficulty}
-
-                        ·
-
-                        ${problem.platform}
-
-                    </p>
-
-                </div>
+            </div>
 
 
-                <div>
+            <div>
 
-                    <a
-                        href="${problem.link}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="problem-btn"
-                    >
-                        Practice ↗
-                    </a>
+                <a
+                    href="${problem.link}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="problem-btn"
+                >
+                    Practice ↗
+                </a>
 
-                    <span class="status">
-                        ✓ Available
-                    </span>
+                <span class="status">
+                    ✓ Available
+                </span>
 
-                </div>
+            </div>
 
-            `;
+        `;
 
 
-            previousContainer.appendChild(
-                card
-            );
+        previousContainer.appendChild(card);
 
-        }
-    );
+    });
 
 }
 
 
 /* =========================================
-   SOLVED COUNTER
+   PROBLEMS SOLVED COUNTER
+   ALWAYS SHOW 2
 ========================================= */
-
 
 function updateSolvedCount() {
 
-    /*
-       Number of unique problems solved.
-    */
+    if (!solvedCount) {
+        return;
+    }
 
-
-    solvedCount.textContent =
-        solvedProblems.length;
+    solvedCount.textContent = "2";
 
 }
 
 
 /* =========================================
-   MEMBERS
+   FIXED 4 MEMBERS
 ========================================= */
+
+const members = [
+
+    "Sagar Gawali",
+
+    "Member 2",
+
+    "Member 3",
+
+    "Member 4"
+
+];
 
 
 function displayMembers() {
+
+    if (!memberList) {
+        return;
+    }
 
     memberList.innerHTML = "";
 
@@ -406,9 +336,7 @@ function displayMembers() {
     members.forEach(member => {
 
         const div =
-            document.createElement(
-                "div"
-            );
+            document.createElement("div");
 
 
         div.className =
@@ -419,106 +347,55 @@ function displayMembers() {
             "⚔️ " + member;
 
 
-        memberList.appendChild(
-            div
-        );
+        memberList.appendChild(div);
 
     });
 
 
-    memberCount.textContent =
-        members.length;
+    if (memberCount) {
+
+        memberCount.textContent =
+            members.length;
+
+    }
 
 }
-
-
-/* =========================================
-   ADD MEMBER
-========================================= */
-
-
-document
-    .getElementById("memberForm")
-    .addEventListener(
-        "submit",
-        function(event) {
-
-            event.preventDefault();
-
-
-            const input =
-                document.getElementById(
-                    "memberName"
-                );
-
-
-            const name =
-                input.value.trim();
-
-
-            if (name === "") {
-                return;
-            }
-
-
-            members.push(name);
-
-
-            localStorage.setItem(
-                "coderArmyMembers",
-                JSON.stringify(
-                    members
-                )
-            );
-
-
-            input.value = "";
-
-
-            displayMembers();
-
-        }
-    );
 
 
 /* =========================================
    DARK / LIGHT MODE
 ========================================= */
 
+if (themeBtn) {
 
-document
-    .getElementById("themeBtn")
-    .addEventListener(
+    themeBtn.addEventListener(
         "click",
         function() {
 
-            document.body.classList.toggle(
-                "light"
-            );
+            document.body.classList.toggle("light");
 
 
             if (
-                document.body.classList.contains(
-                    "light"
-                )
+                document.body.classList.contains("light")
             ) {
 
-                this.textContent = "🌙";
+                this.textContent = "☀️";
 
             } else {
 
-                this.textContent = "☀️";
+                this.textContent = "🌙";
 
             }
 
         }
     );
 
+}
+
 
 /* =========================================
    START WEBSITE
 ========================================= */
-
 
 displayTodayProblems();
 
