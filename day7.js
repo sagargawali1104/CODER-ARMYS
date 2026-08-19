@@ -12,7 +12,46 @@
 
 const dailyProblems = [
  
-        {
+
+    {
+        id: 3,
+        title: "Find Smallest Element",
+        topic: "Array Basics",
+        difficulty: "Basic",
+        platform: "GeeksforGeeks",
+        description:
+            "Find the smallest element present in the given array.",
+        link:
+            "https://www.geeksforgeeks.org/problems/second-smallest-and-second-largest/1"
+    },
+
+    {
+        id: 4,
+        title: "Find Largest Element",
+        topic: "Array Basics",
+        difficulty: "Basic",
+        platform: "GeeksforGeeks",
+        description:
+            "Find the largest element present in the given array.",
+        link:
+            "https://www.geeksforgeeks.org/problems/largest-element-in-array4009/1"
+    }
+
+];
+        
+ 
+
+
+
+
+
+/* =========================================
+   PREVIOUS QUESTIONS
+========================================= */
+
+
+const previousProblems = [
+      {
         id: 101,
         date: "Day 1",
         title: "Print Elements of Array",
@@ -33,18 +72,6 @@ const dailyProblems = [
         link:
             "https://www.geeksforgeeks.org/problems/sum-of-array2326/1"
     },
- 
-
-];
-
-
-
-/* =========================================
-   PREVIOUS QUESTIONS
-========================================= */
-
-
-const previousProblems = [
     
     
 
