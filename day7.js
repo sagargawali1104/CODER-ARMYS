@@ -11,24 +11,23 @@
 
 
 const dailyProblems = [
- 
-
-  {
-    id: 3,
-    date:"Day 2",
-    title: "Find Smallest Element",
-    topic: "Array Basics",
-    difficulty: "Basic",
-    platform: "GeeksforGeeks",
-    description:
-        "Find the smallest element in the given array.",
-    link:
-        "https://www.geeksforgeeks.org/problems/find-the-smallest-and-second-smallest-element-in-an-array3226/1"
-},
 
     {
-        date :"Day 2",
+        id: 3,
+        date: "Day 2",
+        title: "Find Smallest Element",
+        topic: "Array Basics",
+        difficulty: "Basic",
+        platform: "GeeksforGeeks",
+        description:
+            "Find the smallest element in the given array.",
+        link:
+            "https://www.geeksforgeeks.org/problems/find-the-smallest-and-second-smallest-element-in-an-array3226/1"
+    },
+
+    {
         id: 4,
+        date: "Day 2",
         title: "Find Largest Element",
         topic: "Array Basics",
         difficulty: "Basic",
@@ -40,11 +39,6 @@ const dailyProblems = [
     }
 
 ];
-        
- 
-
-
-
 
 
 /* =========================================
@@ -53,7 +47,8 @@ const dailyProblems = [
 
 
 const previousProblems = [
-      {
+
+    {
         id: 101,
         date: "Day 1",
         title: "Print Elements of Array",
@@ -73,14 +68,9 @@ const previousProblems = [
         platform: "GeeksforGeeks",
         link:
             "https://www.geeksforgeeks.org/problems/sum-of-array2326/1"
-    },
-    
-    
+    }
 
-
- 
 ];
-
 
 
 /* =========================================
@@ -88,13 +78,22 @@ const previousProblems = [
 ========================================= */
 
 
-let solvedProblems = [];
+/*
+   IMPORTANT:
+   This saves solved problems after refresh.
+*/
+
+
+let solvedProblems =
+    JSON.parse(
+        localStorage.getItem("solvedProblems")
+    ) || [];
+
 
 let members =
     JSON.parse(
         localStorage.getItem("coderArmyMembers")
     ) || [];
-
 
 
 /* =========================================
@@ -114,9 +113,15 @@ const previousContainer =
     );
 
 
+/*
+   Your HTML uses:
+   <b id="solved">0</b>
+*/
+
+
 const solvedCount =
     document.getElementById(
-        "solvedCount"
+        "solved"
     );
 
 
@@ -132,7 +137,6 @@ const memberList =
     );
 
 
-
 /* =========================================
    DISPLAY TODAY'S PROBLEMS
 ========================================= */
@@ -146,7 +150,9 @@ function displayTodayProblems() {
     dailyProblems.forEach(problem => {
 
         const card =
-            document.createElement("article");
+            document.createElement(
+                "article"
+            );
 
 
         card.className =
@@ -202,6 +208,7 @@ function displayTodayProblems() {
                 <a
                     href="${problem.link}"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="problem-btn"
                 >
                     Open Problem ↗
@@ -211,7 +218,6 @@ function displayTodayProblems() {
                 <button
                     class="problem-btn
                     ${isSolved ? "solved" : ""}"
-
                     onclick="markSolved(${problem.id})"
                 >
 
@@ -238,13 +244,17 @@ function displayTodayProblems() {
 }
 
 
-
 /* =========================================
    MARK AS SOLVED
 ========================================= */
 
 
 function markSolved(id) {
+
+    /*
+       Don't count the same problem twice.
+    */
+
 
     if (
         !solvedProblems.includes(id)
@@ -253,9 +263,14 @@ function markSolved(id) {
         solvedProblems.push(id);
 
 
+        /*
+           Save solved problems
+           in browser.
+        */
+
+
         localStorage.setItem(
             "solvedProblems",
-
             JSON.stringify(
                 solvedProblems
             )
@@ -264,13 +279,17 @@ function markSolved(id) {
     }
 
 
+    /*
+       Update website immediately.
+    */
+
+
+    updateSolvedCount();
+
+
     displayTodayProblems();
 
-
-    displayPreviousProblems();
-
 }
-
 
 
 /* =========================================
@@ -304,6 +323,7 @@ function displayPreviousProblems() {
                         ${problem.title}
                     </h3>
 
+
                     <p>
 
                         ${problem.date}
@@ -330,6 +350,7 @@ function displayPreviousProblems() {
                     <a
                         href="${problem.link}"
                         target="_blank"
+                        rel="noopener noreferrer"
                         class="problem-btn"
                     >
                         Practice ↗
@@ -354,7 +375,6 @@ function displayPreviousProblems() {
 }
 
 
-
 /* =========================================
    SOLVED COUNTER
 ========================================= */
@@ -362,11 +382,15 @@ function displayPreviousProblems() {
 
 function updateSolvedCount() {
 
+    /*
+       Number of unique problems solved.
+    */
+
+
     solvedCount.textContent =
         solvedProblems.length;
 
 }
-
 
 
 /* =========================================
@@ -395,7 +419,9 @@ function displayMembers() {
             "⚔️ " + member;
 
 
-        memberList.appendChild(div);
+        memberList.appendChild(
+            div
+        );
 
     });
 
@@ -405,6 +431,10 @@ function displayMembers() {
 
 }
 
+
+/* =========================================
+   ADD MEMBER
+========================================= */
 
 
 document
@@ -427,9 +457,7 @@ document
 
 
             if (name === "") {
-
                 return;
-
             }
 
 
@@ -437,13 +465,10 @@ document
 
 
             localStorage.setItem(
-
                 "coderArmyMembers",
-
                 JSON.stringify(
                     members
                 )
-
             );
 
 
@@ -454,7 +479,6 @@ document
 
         }
     );
-
 
 
 /* =========================================
@@ -481,9 +505,7 @@ document
 
                 this.textContent = "🌙";
 
-            }
-
-            else {
+            } else {
 
                 this.textContent = "☀️";
 
@@ -491,7 +513,6 @@ document
 
         }
     );
-
 
 
 /* =========================================
