@@ -13,19 +13,21 @@
 const dailyProblems = [
  
 
-    {
-        id: 3,
-        title: "Find Smallest Element",
-        topic: "Array Basics",
-        difficulty: "Basic",
-        platform: "GeeksforGeeks",
-        description:
-            "Find the smallest element present in the given array.",
-        link:
-            "https://www.geeksforgeeks.org/problems/second-smallest-and-second-largest/1"
-    },
+  {
+    id: 3,
+    date:"Day 2",
+    title: "Find Smallest Element",
+    topic: "Array Basics",
+    difficulty: "Basic",
+    platform: "GeeksforGeeks",
+    description:
+        "Find the smallest element in the given array.",
+    link:
+        "https://www.geeksforgeeks.org/problems/find-the-smallest-and-second-smallest-element-in-an-array3226/1"
+},
 
     {
+        date :"Day 2",
         id: 4,
         title: "Find Largest Element",
         topic: "Array Basics",
