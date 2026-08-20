@@ -10,31 +10,27 @@
 
 const dailyProblems = [
 
-    {
-        id: 3,
-        date: "Day 2",
-        title: "Find Maximum Element",
-        topic: "Array Basics",
-        difficulty: "Basic",
-        platform: "GeeksforGeeks",
-        description:
-            "Find the maximum element in the given array.",
-        link:
-            "https://www.geeksforgeeks.org/problems/largest-element-in-array4009/1"
-    },
+ {
+    id: 5,
+    date: "Day 3",
+    title: "Second Largest Element",
+    topic: "Array Basics",
+    difficulty: "Easy",
+    platform: "GeeksforGeeks",
+    link:
+        "https://www.geeksforgeeks.org/problems/second-largest3735/1"
+},
 
-    {
-        id: 4,
-        date: "Day 2",
-        title: "Find Minimum Element",
-        topic: "Array Basics",
-        difficulty: "Basic",
-        platform: "GeeksforGeeks",
-        description:
-            "Find the minimum element in the given array.",
-        link:
-            "https://www.geeksforgeeks.org/problems/min-element-in-array/1"
-    }
+{
+    id: 6,
+    date: "Day 3",
+    title: "Reverse an Array",
+    topic: "Array Basics",
+    difficulty: "Easy",
+    platform: "GeeksforGeeks",
+    link:
+        "https://www.geeksforgeeks.org/problems/reverse-an-array/1"
+},
 
 ];
 
@@ -65,6 +61,31 @@ const previousProblems = [
         platform: "GeeksforGeeks",
         link:
             "https://www.geeksforgeeks.org/problems/sum-of-array2326/1"
+    },
+    {
+        id: 3,
+        date: "Day 2",
+        title: "Find Maximum Element",
+        topic: "Array Basics",
+        difficulty: "Basic",
+        platform: "GeeksforGeeks",
+        description:
+            "Find the maximum element in the given array.",
+        link:
+            "https://www.geeksforgeeks.org/problems/largest-element-in-array4009/1"
+    },
+
+    {
+        id: 4,
+        date: "Day 2",
+        title: "Find Minimum Element",
+        topic: "Array Basics",
+        difficulty: "Basic",
+        platform: "GeeksforGeeks",
+        description:
+            "Find the minimum element in the given array.",
+        link:
+            "https://www.geeksforgeeks.org/problems/min-element-in-array/1"
     }
 
 ];
