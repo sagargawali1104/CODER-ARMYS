@@ -10,26 +10,25 @@
 
 const dailyProblems = [
 
- {
-    id: 5,
-    date: "Day 3",
-    title: "Second Largest Element",
-    topic: "Array Basics",
-    difficulty: "Easy",
-    platform: "GeeksforGeeks",
-    link:
-        "https://www.geeksforgeeks.org/problems/second-largest3735/1"
-},
-
 {
-    id: 6,
-    date: "Day 3",
-    title: "Reverse an Array",
+    id: 7,
+    date: "Day 4",
+    title: "Rotate Array By One",
     topic: "Array Basics",
     difficulty: "Easy",
     platform: "GeeksforGeeks",
     link:
-        "https://www.geeksforgeeks.org/problems/reverse-an-array/1"
+        "https://www.geeksforgeeks.org/c-program-cyclically-rotate-array-one/"
+},
+{
+    id: 8,
+    date: "Day 4",
+    title: "Remove Duplicates from Sorted Array",
+    topic: "Array Basics",
+    difficulty: "Easy",
+    platform: "LeetCode",
+    link:
+        "https://leetcode.com/problems/remove-duplicates-from-sorted-array/"
 },
 
 ];
@@ -86,7 +85,28 @@ const previousProblems = [
             "Find the minimum element in the given array.",
         link:
             "https://www.geeksforgeeks.org/problems/min-element-in-array/1"
-    }
+    },
+     {
+    id: 5,
+    date: "Day 3",
+    title: "Second Largest Element",
+    topic: "Array Basics",
+    difficulty: "Easy",
+    platform: "GeeksforGeeks",
+    link:
+        "https://www.geeksforgeeks.org/problems/second-largest3735/1"
+},
+
+{
+    id: 6,
+    date: "Day 3",
+    title: "Reverse an Array",
+    topic: "Array Basics",
+    difficulty: "Easy",
+    platform: "GeeksforGeeks",
+    link:
+        "https://www.geeksforgeeks.org/problems/reverse-an-array/1"
+},
 
 ];
 
